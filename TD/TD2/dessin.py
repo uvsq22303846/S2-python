@@ -6,17 +6,20 @@ CANVAS_WIDTH, CANVAS_HEIGHT = 600, 400
 DEFAULT_COLOR = "blue"
 selected_color = DEFAULT_COLOR  # Couleur par défaut
 
+
 def dessiner_cercle():
     global selected_color
     x = random.randint(50, CANVAS_WIDTH - 50)
     y = random.randint(50, CANVAS_HEIGHT - 50)
     canvas.create_oval(x - 50, y - 50, x + 50, y + 50, fill=selected_color)
 
+
 def dessiner_carre():
     global selected_color
     x = random.randint(50, CANVAS_WIDTH - 50)
     y = random.randint(50, CANVAS_HEIGHT - 50)
     canvas.create_rectangle(x - 50, y - 50, x + 50, y + 50, fill=selected_color)
+
 
 def dessiner_croix():
     global selected_color
@@ -26,11 +29,13 @@ def dessiner_croix():
     canvas.create_line(x - 50, y, x + 50, y, fill=selected_color)
     canvas.create_line(x, y - 50, x, y + 50, fill=selected_color)
 
+
 def choisir_couleur():
     global selected_color
     couleur = cc.askcolor(initialcolor=selected_color)[1]
     if couleur:
         selected_color = couleur
+
 
 root = tk.Tk()
 root.title("Mon dessin")
